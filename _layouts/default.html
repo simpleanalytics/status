@@ -75,9 +75,15 @@
       <div class="content">
         <h1>{{ page.title }} <a href="https://github.com/simpleanalytics/status/blob/master/{{ page.path }}" target="_blank"><img class="icon" src="/images/pencil.svg" alt="edit"></a></h1>
         {% if page.url != '/' %}
-          <p class="text-muted" style="margin-top: -0.5rem;">Start of incident: {{ page.date | date: '%b %d, %Y  %l:%M %P' }} UTC</p>
+          <p class="text-muted" style="margin-top: -0.5rem;">
+            <span class="label {{ page.status }}">{{ page.status }}</span>
+            Start of incident: {{ page.date | date: '%b %d, %Y  %l:%M %P' }} UTC
+          </p>
         {% endif %}
         {{ content }}
+        {% if page.url != '/' %}
+          <blockquote>Please contact us if anything is not working correctly via <a href="mailto:{{ site.email }}">email</a> or <a href="https://twitter.com/{{ site.twitter_username }}">twitter</a></blockquote>
+        {% endif %}
       </div>
     </main>
 

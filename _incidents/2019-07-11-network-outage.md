@@ -7,7 +7,7 @@ status: resolved
 
 As a transparent company, we also share our issues. On July 11th at 6:10 PM UTC we had a network outage in our data center in Iceland. We noticed this promptly with our monitoring systems and quick help from [Daniel](https://twitter.com/DanielLockyer) (our server hero). After 46 minutes our servers were reachable again and the outage was over.
 
-Today we worked hard on getting the data more accurate by using the average of the hour before and after the incident. We used that average to replace the data of the 46 minutes where we were unreachable. The calculation we used for the outage period is: `( ( VISITS 4 to 5PM + VISITS 6 to 7PM ) / 2 )`. This means that we only corrected the visits and no other data.
+We worked hard on getting the data more accurate by using the average of the hour before and after the incident. We used that average to replace the data of the 46 minutes where we were unreachable. The calculation we used for the outage period is: `( ( VISITS 4 to 5PM + VISITS 6 to 7PM ) / 2 )`. This means that we only corrected the visits and no other data. If you want to revert this correction, [let us know](https://simpleanalytics.com/contact?ref={{ site.hostname }}).
 
 We do have backup systems in place in case our main server does not function properly, but we didn’t have solutions for a total network outage. We are looking into solutions on how to prevent this from happening ever again. We welcome any feedback on how to prevent this in the  future.
 
