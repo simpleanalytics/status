@@ -1,0 +1,37 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@import "variables";
+@import "simpleanalytics";
+@import "highlighting";
+@import "base";
+@import "header";
+@import "footer";
+
+.nowrap pre {
+  white-space: normal;
+}
+details {
+  margin: 1rem 0;
+}
+blockquote.red {
+  border-left-color: #E51800;
+  background-color: #FFF0EE;
+}
+main {
+  padding-top: 3rem;
+}
+span.label {
+  padding: 5px 10px;
+  background-color: grey;
+  border-radius: 5px;
+  color: white;
+
+  &.resolved {
+    background-color: #42bd42;
+  }
+  &.open {
+    background-color: #e03045;
+  }
+}
