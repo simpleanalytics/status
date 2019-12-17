@@ -1,7 +1,7 @@
 ---
 title: Network outage in data center
 permalink: /incidents/2
-date: 2019-07-11 18:10:00 +0000
+date: 2019-12-05 10:30:00 +0000
 status: resolved
 ---
 
