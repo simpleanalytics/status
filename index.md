@@ -6,7 +6,8 @@ As a transparent company, we also share our incidents. Please let us know if any
 
 > Please contact us if anything is not working correctly via <a href="mailto:{{ site.email }}">email</a> or <a href="https://twitter.com/{{ site.twitter_username }}">twitter</a>
 
-{% for incident in site.incidents | reverse %}
+{% assign incidents = site.incidents | sort: "date" %}
+{% for incident in incidents %}
   <h3><a href="{{ incident.url }}">{{ incident.title }}</a></h3>
   <p>
     <span class="label {{ incident.status }}">{{ incident.status }}</span>
