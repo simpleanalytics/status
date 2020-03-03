@@ -1,5 +1,5 @@
 ---
-title: Custom domain feature issues
+title: Custom domain feature issue
 permalink: /incidents/5
 date: 2020-02-19 12:00:00 +0000
 status: resolved
