@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Simple Analytics Status Page
-email: support@mail.simpleanalytics.io
+email: support@simpleanalytics.com
 hostname: status.simpleanalytics.com
 description: >- # this means to ignore newlines until "baseurl:"
   The status page of Simple Analytics where you can see past and current incedents.
