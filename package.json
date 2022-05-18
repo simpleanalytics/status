@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "start": "bundle exec jekyll serve"
+    "dev": "bundle exec jekyll serve",
+    "start": "npm run dev"
   }
 }
