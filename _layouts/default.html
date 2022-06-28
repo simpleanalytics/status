@@ -333,6 +333,21 @@
     <script src="https://chat.simpleanalytics.io/js/widget.js"></script>
     <script src="/js/pjax.min.js"></script>
     <script>
+      var formatDate = function (date, { second }) {
+        if (typeof Intl === "undefined") return date;
+        var options = {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZoneName: "shortGeneric",
+          hour12: false,
+        };
+        if (second) options.second = second;
+        return new Intl.DateTimeFormat("en-US", options).format(new Date(date));
+      };
+
       // Hamber does not get replace by pjaz, so we keep this outside the pageSugar function
       document.querySelector(".hamburger").addEventListener(
         "click",
@@ -344,26 +359,34 @@
 
       // Everything we make interactive after page load and pjax
       function pageSugar() {
-        document
-          .querySelectorAll("[data-timestamp]")
-          .forEach(function (element) {
-            if (
-              !Intl ||
-              !Intl.DateTimeFormat ||
-              !Date.prototype.toLocaleDateString
-            )
-              return;
-            var timestamp = parseInt(
-              element.getAttribute("data-timestamp"),
-              10
-            );
-            var options = { year: "numeric", month: "long", day: "numeric" };
-            element.textContent = new Date(timestamp).toLocaleDateString(
-              "en-US",
-              options
-            );
-            element.title = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementsByTagName("table").forEach(function (table) {
+          var newTable = table.cloneNode(true);
+          var div = document.createElement("div");
+          div.className = "table-wrapper";
+          div.appendChild(newTable);
+          table.parentElement.replaceChild(div, table);
+        });
+
+        document.querySelectorAll("time[datetime]").forEach(function (time) {
+          var date = time.getAttribute("datetime");
+          if (!date) return;
+          time.textContent = formatDate(new Date(date), {});
+        });
+
+        var currentTimeElement = document.querySelector(
+          'time[id="current-time"]'
+        );
+
+        if (currentTimeElement) {
+          currentTimeElement.textContent = formatDate(new Date(), {
+            second: "numeric",
           });
+          setInterval(function () {
+            currentTimeElement.textContent = formatDate(new Date(), {
+              second: "numeric",
+            });
+          }, 1000);
+        }
 
         document
           .querySelectorAll("h1[id], h2[id], h3[id], h4[id], h5[id]")
@@ -387,56 +410,6 @@
         elements: 'a:not([data-js="skip-pjax"])',
         selectors: ["title", "meta[name=description]", "main"],
       });
-    </script>
-    <script>
-      (function () {
-        document.getElementsByTagName("table").forEach(function (table) {
-          var newTable = table.cloneNode(true);
-          var div = document.createElement("div");
-          div.className = "table-wrapper";
-          div.appendChild(newTable);
-          table.parentElement.replaceChild(div, table);
-        });
-      })();
-    </script>
-    <script>
-      var formatDate = function (date, { second }) {
-        if (typeof Intl === "undefined") return date;
-        var options = {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-          timeZoneName: "shortGeneric",
-          hour12: false,
-        };
-        if (second) options.second = second;
-        return new Intl.DateTimeFormat("en-US", options).format(new Date(date));
-      };
-
-      (function () {
-        document.querySelectorAll("time[datetime]").forEach(function (time) {
-          var date = time.getAttribute("datetime");
-          if (!date) return;
-          time.textContent = formatDate(new Date(date), {});
-        });
-
-        var currentTimeElement = document.querySelector(
-          'time[id="current-time"]'
-        );
-        if (!currentTimeElement) return;
-
-        currentTimeElement.textContent = formatDate(new Date(), {
-          second: "numeric",
-        });
-
-        setInterval(function () {
-          currentTimeElement.textContent = formatDate(new Date(), {
-            second: "numeric",
-          });
-        }, 1000);
-      })();
     </script>
   </body>
 </html>

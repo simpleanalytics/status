@@ -9,15 +9,15 @@ Our custom domain server was down and our hosting provider its' customer dashboa
 
 > [NL] Network Outage AMS-01
 > September 22, 2021 05:32
-> 
+>
 > Dear Sir/Madam,
 > We are currently experiencing an outage in our internal network, which has an effect on the following products:
-> 
+>
 > - Customer Portal and APIs
 > - Product Automation
-> 
-> It is our highest priority to have this restored as soon as possible. We apologize for any inconvenience this might cause. 
+>
+> It is our highest priority to have this restored as soon as possible. We apologize for any inconvenience this might cause.
 
-The issue is resolved at 2021-09-22 15:32:00 UTC with a total duration of 48 minutes. For customers with a custom domain there was a data loss in those minutes. 
+The issue is resolved on <time datetime="{{ '2021-09-22T15:32:00Z' | date_to_xmlschema }}">{{ '2021-09-22T15:32:00Z' | date: "%Y-%m-%d %H:%M:%S" }} UTC</time> with a total duration of 48 minutes. For customers with a custom domain there was a data loss in those minutes.
 
 We are very sorry for the inconvenience that might have caused.
