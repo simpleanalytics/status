@@ -9,6 +9,6 @@ We had an issue with our dashboard script not loading correctly. We check with [
 
 We are also working with Hyperping to set up an alert for the JavaScript loading.
 
-The issue is resolved on 2022-06-28 at 05:20:00 UTC. We didn't miss any data, and our APIs, mobile apps, and other systems kept working normally.
+The issue is resolved on <time datetime="{{ '2022-06-28T05:20:00Z' | date_to_xmlschema }}">{{ '2022-06-28T05:20:00Z' | date: "%Y-%m-%d %H:%M:%S" }} UTC</time>. We didn't miss any data, and our APIs, mobile apps, and other systems kept working normally.
 
 We are very sorry for the inconvenience that might have caused.
