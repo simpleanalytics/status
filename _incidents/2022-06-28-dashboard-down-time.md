@@ -1,7 +1,7 @@
 ---
 title: Dashboard down time
 permalink: /incidents/8
-date: 2022-06-28 05:20:00 +0000
+date: 2022-06-27 23:32:00 +0000
 status: resolved
 ---
 
