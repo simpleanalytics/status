@@ -9,4 +9,4 @@ We identified that one of our systems caused certain requests to run extremely s
 
 In total, about 38% of requests failed over a 9.5-hour period due to this performance issue.
 
-We will continue to monitor the system and work on a long-term solution.
+We will continue to monitor the system. A few days after the incident, we switched our load balancer from HAProxy to Traefik, which offered better support for our use case.
