@@ -11,4 +11,4 @@ Update: our hosting provider performed scheduled maintenance to replace a public
 
 Update 10:00 UTC: something is not working correctly. We are investigating.
 
-Update 10:15 UTC: this issue has been resolved.
+Update 10:15 UTC: this issue has been resolved. We are closely monitoring the situation.
