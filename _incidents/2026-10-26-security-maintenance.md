@@ -2,7 +2,7 @@
 title: Server maintenance for security updates
 permalink: /incidents/23
 date: 2026-10-26 16:00:00 +0000
-status: open
+status: resolved
 ---
 
 Between 16:00 and 17:00 UTC today, we're applying security updates to our servers. Some services may be briefly unavailable while they restart. We expect less than 5 minutes of downtime in total.
@@ -18,3 +18,5 @@ What you may have noticed (times in UTC):
 - **From 18:40:** Our database cluster was degraded while it rebalanced after the restarts. During that time, statistics could load slowly or be incomplete, and new data was processed with a delay. The cluster is healthy again.
 
 The cookie scanner is still unavailable. We're working on it and will mark this incident resolved once it's back.
+
+**Update November 2, 07:00 UTC:** The cookie scanner is back up. All services are running normally again, so we're marking this incident as resolved. Along the way, we hardened the security of our servers and services in many places. We're sorry for the disruption.
